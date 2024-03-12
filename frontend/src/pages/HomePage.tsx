@@ -10,7 +10,7 @@ const HomePage = () => {
         <span className="text-xl">Food is just a Click away!</span>
       </div>
       <div className="grid md:grid-cols-2 gap-5">
-        <img src={landingImage} />
+        <img className="rounded-lg" src={landingImage} />
         <div className="gap-4 flex flex-col items-center justify-center text-center">
           <span className="font-bold text-3xl tracking-tighter">
             Orders At Ease
