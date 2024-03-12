@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 5173, // Specify the port you want Vite to use
+    host: "0.0.0.0",
   },
   resolve: {
     alias: {
