@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className="border-b-2 border-b-orange-500 py-6">
       {" "}
-      <div className="container mx-auto flex justify-between align-baseline">
+      <div className="container mx-auto flex justify-between items-end">
         <Link
           to="/"
           className="flex items-end text-3xl font-bold tracking-tight text-orange-500"
@@ -19,7 +19,7 @@ const Header = () => {
         >
           Login
         </Link> */}
-        <div className="md:hidden flex items-end">
+        <div className="md:hidden flex items-center">
           <MobileNav />
         </div>
         <div className="hidden md:block">

@@ -13,7 +13,7 @@ const MainNav = () => {
           onClick={async () => {
             await loginWithRedirect();
           }}
-          className="text-center flex items-center font-bold hover:text-orange-500 pb-0"
+          className=" font-bold hover:text-orange-500"
         >
           Login
         </Button>
