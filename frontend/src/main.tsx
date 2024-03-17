@@ -7,6 +7,8 @@ import "../app/globals.css";
 import AppRoutes from "./AppRoutes";
 import Auth0ProviderWithNavigate from "./auth/Auth0ProviderWithNavigate";
 
+import "../app/custom.css";
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
