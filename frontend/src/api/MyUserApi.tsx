@@ -1,7 +1,12 @@
+import { User } from "@/types/types";
 import { useAuth0 } from "@auth0/auth0-react";
-import { useMutation } from "react-query";
+
+import { useMutation, useQuery } from "react-query";
 import { toast } from "sonner";
 
+// for updating data in server , we use useMutation
+// for fetching data and displaying the dat in ui , we use
+//useQuery
 const VITE_API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 type CreateUserRequest = {
@@ -9,6 +14,34 @@ type CreateUserRequest = {
   email: string;
 };
 
+export const useGetMyUser = () => {
+  const { getAccessTokenSilently } = useAuth0();
+
+  const getMyUserRequest = async (): Promise<User> => {
+    const accessToken = await getAccessTokenSilently();
+
+    const response = await fetch(`${VITE_API_BASE_URL}/api/my/user`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch user");
+    }
+    return response.json();
+  };
+
+  const {
+    data: currentUser,
+    isError,
+    isLoading,
+    error,
+  } = useQuery("fetchCurrentUser", getMyUserRequest);
+  return { currentUser, isError, isLoading, error };
+};
 export const useCreateMyUser = () => {
   const { getAccessTokenSilently } = useAuth0();
   console.log("auth", getAccessTokenSilently());
@@ -31,9 +64,13 @@ export const useCreateMyUser = () => {
     mutateAsync: createUser,
     isLoading,
     isError,
+    error,
     isSuccess,
   } = useMutation(createMyUserRequest);
 
+  if (error) {
+    toast.error(error.toString());
+  }
   return { createUser, isLoading, isError, isSuccess };
 };
 
@@ -48,7 +85,7 @@ export const useUpdateMyUser = () => {
 
   const updateMyUserRequest = async (FormData: UpdateMyUserRequest) => {
     const accessToken = await getAccessTokenSilently();
-    console.log("accesstoken here", accessToken);
+
     const response = await fetch(`${VITE_API_BASE_URL}/api/my/user`, {
       method: "PUT",
       headers: {
