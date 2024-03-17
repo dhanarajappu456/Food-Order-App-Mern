@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 const LoadingButton = () => {
   return (
-    <Button className="bg-orange-400">
+    <Button className="bg-orange-500 hover:bg-orange-400">
       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
       Loading...
     </Button>

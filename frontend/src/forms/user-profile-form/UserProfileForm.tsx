@@ -38,7 +38,7 @@ const UserProfileForm = ({ onSave, isLoading }: Props) => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSave)}
-        className="space-y-4 bg-gray-50 rounded-lg md:p-10"
+        className="space-y-4 bg-gray-50 rounded-lg p-3 md:p-10"
       >
         <div>
           <h2 className="text-2xl font-bold">User Profile</h2>
@@ -64,21 +64,21 @@ const UserProfileForm = ({ onSave, isLoading }: Props) => {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input {...field} disabled className="bg-white" />
+                <Input {...field} className="bg-white" />
               </FormControl>
             </FormItem>
           )}
         />
 
-        <div className="flex flex-col md:flex-row justify-between ">
+        <div className="flex flex-col md:flex-row gap-4">
           <FormField
             control={form.control}
             name="addressLine1"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="flex-1">
                 <FormLabel>Address Line1</FormLabel>
                 <FormControl>
-                  <Input {...field} disabled className="bg-white" />
+                  <Input {...field} className="bg-white" />
                 </FormControl>
               </FormItem>
             )}
@@ -87,10 +87,10 @@ const UserProfileForm = ({ onSave, isLoading }: Props) => {
             control={form.control}
             name="city"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="flex-1">
                 <FormLabel>City</FormLabel>
                 <FormControl>
-                  <Input {...field} disabled className="bg-white" />
+                  <Input {...field} className="bg-white" />
                 </FormControl>
               </FormItem>
             )}
@@ -100,10 +100,10 @@ const UserProfileForm = ({ onSave, isLoading }: Props) => {
             control={form.control}
             name="country"
             render={({ field }) => (
-              <FormItem>
+              <FormItem className="flex-1">
                 <FormLabel>Country</FormLabel>
                 <FormControl>
-                  <Input {...field} disabled className="bg-white" />
+                  <Input {...field} className="bg-white" />
                 </FormControl>
               </FormItem>
             )}
@@ -112,7 +112,7 @@ const UserProfileForm = ({ onSave, isLoading }: Props) => {
         {isLoading ? (
           <LoadingButton />
         ) : (
-          <Button className="bg-orange-500">Submit</Button>
+          <Button className="bg-orange-500 hover:bg-orange-400">Submit</Button>
         )}
       </form>
     </Form>
