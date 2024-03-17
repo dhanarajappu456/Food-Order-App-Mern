@@ -6,9 +6,8 @@ This is a full-stack food delivery application developed using the MERN (MongoDB
 
 ## Live Application
 
-- **Frontend**: [Food Order App Frontend](https://food-order-app-mern.onrender.com)
-- **Backend**: [Food Order App Backend](https://food-order-app-mern-backend.onrender.com)
-
+- **Frontend**: [Food Order App Frontend](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCRKguaNZrVn6-NK9Ir6VdZf7PoRwLStgLLgsoSMq9ZA&s)
+- **Backend**: [Food Order App Backend](https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png)
 ## Features
 
 - User authentication and authorization
