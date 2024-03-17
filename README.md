@@ -22,9 +22,6 @@ This is a full-stack food delivery application developed using the MERN (MongoDB
 - **Frontend**:
   - React.js - A JavaScript library for building user interfaces
   - TypeScript - A typed superset of JavaScript that compiles to plain JavaScript
-  - ![React.js Logo]()
-  - ![TypeScript Logo]()
- 
   - <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCRKguaNZrVn6-NK9Ir6VdZf7PoRwLStgLLgsoSMq9ZA&s" alt="React.js Logo" width="50" height="50">
   - <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png" alt="Node.js Logo" width="50" height="50">
 
