@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import MyUserController from "../controllers/MyUserController";
 import { jwtCheck, jwtParse } from "../middleware/auth";
 import { validateMyUserRequest } from "../middleware/validation";
@@ -13,5 +13,7 @@ router.put(
   validateMyUserRequest,
   MyUserController.updateCurrentUser
 );
-
+router.get("/test", (req: Request, res: Response) => {
+  res.send("<h1>Hello</h1>");
+});
 export default router;
